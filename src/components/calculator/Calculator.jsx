@@ -47,7 +47,7 @@ const Calculator = () => {
            const cloneNode = expDiv.cloneNode(true);
            expDiv.parentNode.appendChild(cloneNode);
             
-           const transform = `translateY(${-(expDiv.offsetHeight + 10) + 'px'}) scale(0.4)`;
+           const transform = `translateY(${-(expDiv.offsetHeight + 10) + 'px'}) scale(0.3)`;
            
            try {
              let res = eval(expression);
@@ -61,7 +61,7 @@ const Calculator = () => {
            }  catch {
             setTimeout(() => {
               cloneNode.style.transform = transform;
-              cloneNode.innerHTML= 'Syntax err';
+              cloneNode.innerHTML= 'error';
               
 
             },200);
@@ -86,7 +86,7 @@ const Calculator = () => {
           span.style.opacity ='1';
           span.style.width = width;
 
-        }, 100 );
+        }, 200 );
 
     }
 
@@ -96,8 +96,9 @@ const Calculator = () => {
        <div className="Calculator__result">
           <div ref={expRef} className="Calculator__result__exp"> 
           </div>
-          <div className="Calculator__result__exp"></div>
+            <div className="Calculator__result__exp"></div> 
         </div>
+                      
            <div ref={btnsRef} className="Calculator__btns">
              {
                btns.map((item, index) =>(
