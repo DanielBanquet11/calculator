@@ -47,7 +47,7 @@ const Calculator = () => {
            const cloneNode = expDiv.cloneNode(true);
            expDiv.parentNode.appendChild(cloneNode);
             
-           const transform = `translateY(${-(expDiv.offsetHeight + 10) + 'px'}) scale(0.3)`;
+           const transform = `translateY(${-(expDiv.offsetHeight + 40) + 'px'}) scale(0.3)`;
            
            try {
              let res = eval(expression);
